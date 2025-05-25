@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,9 +11,11 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-semibold text-gray-900">
-            Developer Student Club Darmstadt
+          <Link href="/" className="flex items-center space-x-2 text-xl font-semibold text-gray-900">
+            <Image src="/logo4.png" alt="Logo" width={32} height={32} />
+            <span>Developer Student Club Darmstadt</span>
           </Link>
+
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-6">

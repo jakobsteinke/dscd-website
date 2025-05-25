@@ -1,102 +1,125 @@
 import Image from "next/image";
+import Link from "next/link";
+import EventCard from "../components/EventCard";
+import OrganizerCard from "../components/OrganizerCard";
+
+const eventImages = ["/event1.png", "/event1.png", "/event1.png", "/event1.png"];
+const organizers = [
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg",
+  "weihe.jpg"
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div>
+      {/* Header Image */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/GDG-Bevy-ChapterBanner.jpg"
+          alt="Header"
+          width={1600}
+          height={400}
+          className="rounded-xl w-full h-auto object-cover"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* About Section */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="about">
+          <h2 className="text-4xl font-normal mb-4">About</h2>
+          <p className="text-gray-700 mb-4">
+            Welcome to the Developer Student Club at TU Darmstadt! 🚀
+          </p>
+          <p className="text-gray-700 mb-4">
+            Founded in 2024, our mission is to bridge the gap between theory and real-world application. We organize hands-on workshops, inspiring tech talks, and collaborative hackathons to empower students to build, learn, and connect.
+          </p>
+          <p className="text-gray-700 mb-4">
+            Whether you're into AI, web development, data science, or simply curious about tech — we’re here to help you grow. We welcome students of all disciplines and skill levels. No experience required!
+          </p>
+          <p className="text-gray-700 mb-4">
+            🔥 Join our community by clicking the "Join us" button above to receive updates on upcoming events, project opportunities, and our monthly newsletter.
+          </p>
+          <p className="text-gray-700 mb-4">
+            💡 Interested in helping shape the club? Join our weekly meeting every Monday at 16:00 in Room A020, Robert-Piloty-Gebäude (S2|02).
+          </p>
+          <p className="text-gray-700">
+            Collaborating to drive innovation, right here on campus! 
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Upcoming Events */}
+      <section className="bg-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-normal mb-4">Upcoming events</h2>
+          <p className="text-gray-700">There are currently no upcoming events. Please check again soon.</p>
+        </div>
+      </section>
+
+      {/* Past Events */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-normal mb-10">Past events</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {eventImages.map((src, index) => (
+              <EventCard key={index} src={src} date="22. Mai 2025" title="Example event title" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Organizers */}
+      <section className="bg-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-normal mb-10">Organizers</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {organizers.map((src, i) => (
+              <OrganizerCard key={i} src={`/${src}`} name="Organizer Name" role="Role" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-t-[0.5px] border-gray-300 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded font-medium mb-8">
+            Contact Us
+          </button>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 text-sm text-gray-600 gap-4 items-start">
+            <div className="flex justify-center sm:justify-start items-center space-x-2">
+              <Image src="/logo4.png" alt="DSC Logo" width={35} height={35} />
+              <p className="text-lg sm:text-xl font-semibold">Developer Student Club</p>
+            </div>
+
+            <div>
+              <p className="font-semibold mb-1">Quick Links</p>
+              <ul className="space-y-1">
+                <li><Link href="#">About DSCD</Link></li>
+                <li><Link href="#">Upcoming Events</Link></li>
+                <li><Link href="#">Privacy</Link></li>
+              </ul>
+            </div>
+
+           <div className="flex flex-col items-center">
+            <p className="font-semibold mb-2">Social</p>
+            <div className="flex justify-center space-x-4">
+              <Image src="/insta.png" alt="Instagram" width={28} height={28} className="object-contain" />
+              <Image src="/linkedin.png" alt="LinkedIn" width={28} height={28} className="object-contain" />
+              <Image src="/discord.png" alt="Discord" width={28} height={28} className="object-contain" />
+            </div>
+          </div>
+
+          </div>
+          <p className="text-xs mt-8">Developer Student Club Darmstadt · 2025</p>
+        </div>
       </footer>
     </div>
   );
